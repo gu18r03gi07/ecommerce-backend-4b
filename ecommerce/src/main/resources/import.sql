@@ -34,8 +34,17 @@ insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (4, 4,
 insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (5, 5, 2, 249.90);
 
 -- Pagamentos
-insert into pagamento (forma_pagamento, valor, status) values ('PIX', 174.68, 'APROVADO');
-insert into pagamento (forma_pagamento, valor, status) values ('CARTAO_CREDITO', 3499.90, 'APROVADO');
-insert into pagamento (forma_pagamento, valor, status) values ('BOLETO', 1899.99, 'PENDENTE');
-insert into pagamento (forma_pagamento, valor, status) values ('PIX', 449.70, 'APROVADO');
-insert into pagamento (forma_pagamento, valor, status) values ('CARTAO_DEBITO', 499.80, 'APROVADO');
+insert into pagamento (valor_unitario, data, status, tipo)
+values (174.68, '2026-09-01 10:05:00', 'APROVADO', 'PIX');
+
+insert into pagamento (valor_unitario, data, status, tipo)
+values (3499.90, '2026-09-01 11:05:00', 'APROVADO', 'CARTAO_CREDITO');
+
+insert into pagamento (valor_unitario, data, status, tipo)
+values (1899.99, '2026-09-02 12:05:00', 'PENDENTE', 'BOLETO');
+
+insert into pagamento (valor_unitario, data, status, tipo)
+values (449.70, '2026-09-02 13:05:00', 'APROVADO', 'PIX');
+
+insert into pagamento (valor_unitario, data, status, tipo)
+values (499.80, '2026-09-03 14:05:00', 'APROVADO', 'CARTAO_DEBITO');
