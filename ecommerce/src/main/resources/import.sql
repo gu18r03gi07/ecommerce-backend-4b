@@ -20,18 +20,28 @@ insert into cliente (nome, email, cpf, senha) values ('Ana Souza', 'ana@email.co
 insert into cliente (nome, email, cpf, senha) values ('Pedro Costa', 'pedro@email.com', '55555555555', '123456');
 
 -- Pedidos
-insert into pedido (instante, cliente_id) values ('2026-09-01 10:00:00', 1);
-insert into pedido (instante, cliente_id) values ('2026-09-01 11:00:00', 2);
-insert into pedido (instante, cliente_id) values ('2026-09-02 12:00:00', 3);
-insert into pedido (instante, cliente_id) values ('2026-09-02 13:00:00', 4);
-insert into pedido (instante, cliente_id) values ('2026-09-03 14:00:00', 5);
+
+insert into pedido (data, cliente_id, valor_total, status)
+values ('2026-09-01 10:00:00', 1, 174.68, 'PAGO');
+
+insert into pedido (data, cliente_id, valor_total, status)
+values ('2026-09-01 11:00:00', 2, 3499.90, 'PAGO');
+
+insert into pedido (data, cliente_id, valor_total, status)
+values ('2026-09-02 12:00:00', 3, 1899.99, 'PENDENTE');
+
+insert into pedido (data, cliente_id, valor_total, status)
+values ('2026-09-02 13:00:00', 4, 449.70, 'PAGO');
+
+insert into pedido (data, cliente_id, valor_total, status)
+values ('2026-09-03 14:00:00', 5, 499.80, 'PAGO');
 
 -- Itens dos pedidos
-insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (1, 1, 2, 87.34);
-insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (2, 2, 1, 3499.90);
-insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (3, 3, 1, 1899.99);
-insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (4, 4, 3, 149.90);
-insert into item_pedido (pedido_id, produto_id, quantidade, preco) values (5, 5, 2, 249.90);
+insert into item_pedido (pedido_id, produto_id, quantidade, valor_Unitario) values (1, 1, 2, 87.34);
+insert into item_pedido (pedido_id, produto_id, quantidade, valor_Unitario) values (2, 2, 1, 3499.90);
+insert into item_pedido (pedido_id, produto_id, quantidade, valor_Unitario) values (3, 3, 1, 1899.99);
+insert into item_pedido (pedido_id, produto_id, quantidade, valor_Unitario) values (4, 4, 3, 149.90);
+insert into item_pedido (pedido_id, produto_id, quantidade, valor_Unitario) values (5, 5, 2, 249.90);
 
 -- Pagamentos
 insert into pagamento (valor_unitario, data, status, tipo)
@@ -44,7 +54,7 @@ insert into pagamento (valor_unitario, data, status, tipo)
 values (1899.99, '2026-09-02 12:05:00', 'PENDENTE', 'BOLETO');
 
 insert into pagamento (valor_unitario, data, status, tipo)
-values (449.70, '2026-09-02 13:05:00', 'APROVADO', 'PIX');
+values (449.70, '2026-09-02 13:05:00', 'APROVADO', 'CHEQUE');
 
 insert into pagamento (valor_unitario, data, status, tipo)
 values (499.80, '2026-09-03 14:05:00', 'APROVADO', 'CARTAO_DEBITO');
