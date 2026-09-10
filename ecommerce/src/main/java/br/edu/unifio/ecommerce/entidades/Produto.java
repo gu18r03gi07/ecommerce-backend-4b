@@ -22,11 +22,13 @@ public class Produto {
 
    private String descricao;
 
-   private Short estoque;
-
    private BigDecimal preco;
 
-   @ManyToOne     // Muitas cidades presas em um estado
+   private Short estoque;
+
+
+
+   @ManyToOne     // Muitas cidades presas em um state
    private Categoria categoria; // categoria_id
    
 }
