@@ -2,6 +2,8 @@ package br.edu.unifio.ecommerce.recursos;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,16 +11,19 @@ import br.edu.unifio.ecommerce.entidades.Produto;
 import br.edu.unifio.ecommerce.repositorios.ProdutoRepositorio;
 import lombok.RequiredArgsConstructor;
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/produtos")
-@RequiredArgsConstructor
 public class ProdutoRecurso {
     private final ProdutoRepositorio produtoRepositorio;
 
-     
+    public ProdutoRecurso(ProdutoRepositorio produtoRepositorio) {
+        this.produtoRepositorio = produtoRepositorio;
+    } 
 
+     @GetMapping 
     public List<Produto> listar() {
-        return null;
+        return produtoRepositorio.findAll(Sort.by("nome"));
     }
 
 }
